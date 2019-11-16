@@ -105,7 +105,7 @@ $('#batter-card').hide();
       $('#away-roster').empty();
       let
         id = $(this).data('away-id');
-      away_team_id = id;
+        away_team_id = id;
 
       $(`.${id}`).hide();
       $('#away-team').hide();
@@ -224,17 +224,16 @@ $('#batter-card').hide();
 
     });
 
-   
-    
-    
+
+
+
     $(document).on("click", '#start-match',function(){
     console.log("game started");
     match(home_team_id, away_team_id);
 })
   })
 
-
-  //Sum up the scores on the scoreboard
+//  Sum up the scores on the scoreboard
 
   var visTotalSum = 0;
   $('.visScore').on('change', function () {
