@@ -40,6 +40,8 @@
     "url(../images/diamond3rdBase.jpg)"
   );
 
+let onBase = [];
+
 var mainPage = $("body");
 //mainPage.css("background-image", backgrounds[0] + "top center no-repeat");
 let current = 0; //resets base indicator to empty at start of inning
@@ -158,6 +160,10 @@ $('#batter-card').hide();
     $(document).on('click', '.player-at-bat-btn', function(e) {
       let isAtBat =  e.target.getAttribute('disable');
       console.log(isAtBat)
+      let player_id = $(this).parent()[0].dataset['player_id'];
+      if(onBase[onBase.length-1] = player_id){
+        console.log('hello')
+      }
      if (isAtBat === 'false'){
         let dataSet = $(this)[0].dataset;
         $('#batter-card').show();
@@ -184,7 +190,8 @@ $('#batter-card').hide();
       $('#batter-card').hide();
       console.log('hit');
       console.log(player_id);
-
+      onBase.push(player_id)
+      console.log(onBase)
       $.ajax({
       url: "batter/hits/" + player_id,
       type: "post"
