@@ -179,7 +179,7 @@ $(document).ready(() => {
 
             <td><button class="player-at-bat-btn" id="ht-player-${
               row.player_id
-            }" disable="false"
+            }" disable="true"
                 data-name="${row.player_name}"
                 data-pos="${row.position}"
                 data-ros="${row.jersey_number}"
@@ -223,9 +223,7 @@ $(document).ready(() => {
         .reduce(
           function(table, row) {
             $(`<tr>
-                <td><button class="player-at-bat-btn" id="at-player-${
-                  row.player_id
-                }" disable="false"
+                <td><button class="player-at-bat-btn" id="at-player-${row.player_id}" disable ="true"
                   data-name="${row.player_name}"
                   data-pos="${row.position}"
                   data-ros="${row.jersey_number}"
@@ -265,6 +263,7 @@ $(document).ready(() => {
   $("#start-match").on("click", function() {
     if ($(this).text() === "Start Match") {
       console.log("game started");
+      $(".player-at-bat-btn").attr('disable', 'false');
 
       //Resquest gif
       let url = `https://api.giphy.com/v1/gifs/search?q=baseball&api_key=efON0kuaf67AQ7xZbpJnftqbH8mQgHwh$&limit=10`;
