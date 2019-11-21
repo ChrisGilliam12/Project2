@@ -248,7 +248,7 @@ $(document).ready(() => {
   //start match
   $("#start-match").on("click", function() {
     if ($(this).text() === "Start Match") {
-      
+      $(".player-at-bat-btn").attr('disable', 'false');
       //Resquest gif
       // let url = `https://api.giphy.com/v1/gifs/search?q=baseball&api_key=${process.env.GIF_KEY}$&limit=10`;
       // $.ajax({
@@ -266,7 +266,7 @@ $(document).ready(() => {
         //   });
 
         // }
-      });
+      // });
 
       startMatch(inning).then(function() {
         console.log("Match OVER");
@@ -297,7 +297,7 @@ $(document).ready(() => {
     }
   });
 
-  // Select Batter
+  // Select 
   $(document).on("click", ".player-at-bat-btn", function(e) {
     let isAtBat = e.target.getAttribute("disable");
     if (isAtBat === "false") {
