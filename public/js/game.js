@@ -247,13 +247,9 @@ $(document).ready(() => {
   });
   //start match
   $("#start-match").on("click", function() {
-    if ($(this).text() === "Start Match") {
-
       console.log("game started");
       $(".player-at-bat-btn").attr('disable', 'false');
-
-
-      
+      if ($(this).text() === "Start Match") {
       //Resquest gif
       let url = `https://api.giphy.com/v1/gifs/search?q=baseball&api_key=${
         process.env.GIF_KEY
