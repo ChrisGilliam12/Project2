@@ -250,11 +250,7 @@ $(document).ready(() => {
   //start match
   $("#start-match").on("click", function() {
     if ($(this).text() === "Start Match") {
-<<<<<<< HEAD
       $(".player-at-bat-btn").attr('disable', 'false');
-=======
-
-
 
       startMatch(inning).then(function() { //async function
         console.log("Match OVER");
@@ -262,7 +258,6 @@ $(document).ready(() => {
 
       
 
->>>>>>> 6ad548fcaeb11bc6e13e052118cf1295c9f555e2
       //Resquest gif
       // let url = `https://api.giphy.com/v1/gifs/search?q=baseball&api_key=${
       //   process.env.GIF_KEY
